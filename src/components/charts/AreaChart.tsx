@@ -41,7 +41,8 @@ export const AreaChart: React.FC<AreaChartProps> = ({ countries }) => {
               border: '1px solid #ccc',
               borderRadius: '8px',
             }}
-            formatter={(value: number, name: string) => {
+            formatter={(value: number | undefined, name: string) => {
+              if (!value) return ['0', name];
               if (name === 'Area') return [formatNumber(value) + ' km²', 'Area'];
               if (name === 'Population') return [formatNumber(value), 'Population'];
               return [value, name];

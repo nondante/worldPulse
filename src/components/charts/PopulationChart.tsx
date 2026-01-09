@@ -35,7 +35,7 @@ export const PopulationChart: React.FC<PopulationChartProps> = ({ countries }) =
               border: '1px solid #ccc',
               borderRadius: '8px',
             }}
-            formatter={(value: number) => [formatNumber(value), 'Population']}
+            formatter={(value: number | undefined) => [value ? formatNumber(value) : '0', 'Population']}
           />
           <Bar dataKey="value" radius={[8, 8, 0, 0]}>
             {data.map((entry, index) => (

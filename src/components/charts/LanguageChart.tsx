@@ -39,7 +39,7 @@ export const LanguageChart: React.FC<LanguageChartProps> = ({ countries }) => {
               border: '1px solid #ccc',
               borderRadius: '8px',
             }}
-            formatter={(value: number) => [value, 'Countries']}
+            formatter={(value: number | undefined) => [value ?? 0, 'Countries']}
           />
           <Bar dataKey="value" fill="#3b82f6" radius={[0, 8, 8, 0]} />
         </BarChart>
