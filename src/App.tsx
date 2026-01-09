@@ -128,6 +128,19 @@ function App() {
           <p className="text-sm mt-2">
             Showing {filteredCountries.length} of {countries?.length || 0} countries
           </p>
+          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
+            <p className="text-sm">
+              Developed by <span className="font-medium text-gray-900 dark:text-white">Jana Radziuka</span>
+            </p>
+            <p className="text-sm mt-1">
+              <a
+                href="mailto:petopolydev@gmail.com"
+                className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300 transition-colors"
+              >
+                PetopolyDev - petopolydev@gmail.com
+              </a>
+            </p>
+          </div>
         </div>
       </footer>
     </div>
