@@ -41,11 +41,12 @@ export const AreaChart: React.FC<AreaChartProps> = ({ countries }) => {
               border: '1px solid #ccc',
               borderRadius: '8px',
             }}
-            formatter={(value: number | undefined, name: string) => {
-              if (!value) return ['0', name];
+            formatter={(value: number | undefined, name: string | undefined) => {
+              const displayName = name ?? '';
+              if (!value) return ['0', displayName];
               if (name === 'Area') return [formatNumber(value) + ' km²', 'Area'];
               if (name === 'Population') return [formatNumber(value), 'Population'];
-              return [value, name];
+              return [value, displayName];
             }}
           />
           {Object.keys(REGION_COLORS).map((region) => (
